@@ -18,24 +18,23 @@ public class SecondActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.putExtra("data_return","Hello FirstActivity");
-                setResult(RESULT_OK,intent);
-                finish();
+                Intent intent = new Intent(SecondActivity.this, FirstActivity.class);
+                startActivity(intent);
             }
         });
-//        Intent intent = getIntent();
-//        String extra_data = intent.getStringExtra("extra_data");
-//        int extra_num = intent.getIntExtra("extra_num", 0);
-//        Log.d("SecondActivity", extra_data);
-//        Log.d("SecondActivity", extra_num + "");
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         Intent intent = new Intent();
         intent.putExtra("data_return", "Hello FirstActivity");
         setResult(RESULT_OK, intent);
         finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("SecondActivity", "onDestroy");
     }
 }
