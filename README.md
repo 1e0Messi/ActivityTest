@@ -1,2 +1,2 @@
 # ActivityTest
-联系项目
+练习项目
