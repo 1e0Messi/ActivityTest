@@ -12,7 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class FirstActivity extends AppCompatActivity {
+public class FirstActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,14 +23,7 @@ public class FirstActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
-                startActivity(intent);
-//                String data = "hello secondActivity";
-//                int number = 5;
-//                intent.putExtra("extra_data",data);
-//                intent.putExtra("extra_num",number);
-//                startActivity(intent);
+                SecondActivity.actionStart(FirstActivity.this, "data1", "data2");
             }
         });
     }
